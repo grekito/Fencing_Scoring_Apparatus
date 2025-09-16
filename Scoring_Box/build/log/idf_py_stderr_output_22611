@@ -1,0 +1,5 @@
+Command: make -j 6 flash
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void fencing_setup()':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:344:25: warning: variable 'ledc_timer' set but not used [-Wunused-but-set-variable]
+  344 |     ledc_timer_config_t ledc_timer = {};
+      |                         ^~~~~~~~~~

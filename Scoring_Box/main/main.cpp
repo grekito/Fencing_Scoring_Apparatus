@@ -67,7 +67,7 @@ bool lockedOut = false, hitMass = false;
 unsigned long lastModeButtonPressTime = 0, lastVolumeButtonPressTime = 0;
 unsigned long lastRedDataTime = 0, lastGreenDataTime = 0;
 uint8_t currentMode = EPEE_MODE;
-int current_volume = 3;
+int current_volume = 1;
 bool depressedRD = false, depressedGRN = false;
 bool hitOnTargetRD = false, hitOffTargetRD = false, massLedRD = false, hitMassRD = false;
 bool hitOnTargetGRN = false, hitOffTargetGRN = false, massLedGRN = false, hitMassGRN = false;
@@ -91,9 +91,9 @@ void pinMode(gpio_num_t pin, gpio_mode_t mode) {
 }
 
 // PWM helper
-void setBuzzerVolume(int volume) {
+void setBuzzerVolume(int current_volume) {
     int duty_cycle = 0;
-    switch (volume) {
+    switch (current_volume) {
         case 0: duty_cycle = 0; break;
         case 1: duty_cycle = 64; break;
         case 2: duty_cycle = 200; break;
@@ -341,31 +341,30 @@ void fencing_setup() {
     pinMode(OFF_TARGET_GRN, GPIO_MODE_OUTPUT);
     pinMode(OFF_TARGET_RD, GPIO_MODE_OUTPUT);
 
-    ledc_timer_config_t ledc_timer = {};
-    ledc_timer.speed_mode = LEDC_LOW_SPEED_MODE;
-    ledc_timer.timer_num = LEDC_TIMER_0;
-    ledc_timer.duty_resolution = LEDC_TIMER_10_BIT;
-    ledc_timer.freq_hz = BUZZER_FREQ;
-    ledc_timer.clk_cfg = LEDC_AUTO_CLK;
+    ledc_timer_config_t timer_conf = {};
+    timer_conf.speed_mode = LEDC_LOW_SPEED_MODE;
+    timer_conf.timer_num = LEDC_TIMER_0;
+    timer_conf.duty_resolution = LEDC_TIMER_10_BIT;
+    timer_conf.freq_hz = BUZZER_FREQ;
+    timer_conf.clk_cfg = LEDC_AUTO_CLK;
 #if ESP_IDF_VERSION_MAJOR >= 5
-    ledc_timer.deconfigure = 0;
+    timer_conf.deconfigure = 0;
 #endif
-    ledc_timer_config(&ledc_timer);
+    ledc_timer_config(&timer_conf);
 
-    ledc_channel_config_t ledc_channel = {};
-    ledc_channel.gpio_num = BUZZER;
-    ledc_channel.speed_mode = LEDC_LOW_SPEED_MODE;
-    ledc_channel.channel = BUZZER_CHANNEL;
-    ledc_channel.timer_sel = LEDC_TIMER_0;
-    ledc_channel.duty = 0;
-    ledc_channel.hpoint = 0;
-    ledc_channel.intr_type = LEDC_INTR_DISABLE;
+    ledc_channel_config_t ledc_conf = {};
+    ledc_conf.speed_mode = LEDC_LOW_SPEED_MODE;
+    ledc_conf.channel = BUZZER_CHANNEL;
+    ledc_conf.timer_sel = LEDC_TIMER_0;
+    ledc_conf.gpio_num = BUZZER;
+    ledc_conf.duty = 0;
+    ledc_conf.hpoint = 0;
 #if ESP_IDF_VERSION_MAJOR >= 5
-    ledc_channel.flags.output_invert = 0;
-    ledc_channel.flags = {};
-    ledc_channel.sleep_mode = LEDC_SLEEP_MODE_INVALID;
+    ledc_conf.flags.output_invert = 0;
+    ledc_conf.flags = {};
+    // ledc_conf.sleep_mode = LEDC_SLEEP_MODE_OFF; // Remove or comment out
 #endif
-    ledc_channel_config(&ledc_channel);
+    ledc_channel_config(&ledc_conf);
 
     setBuzzerVolume(0);
     ESP_LOGI(TAG, "Fencing Scoring Apparatus setup complete.");

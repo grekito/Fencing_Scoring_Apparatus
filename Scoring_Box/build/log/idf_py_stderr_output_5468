@@ -1,0 +1,21 @@
+Command: make -j 6 all
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void fencing_setup()':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:362:18: warning: 'ledc_channel_config_t::intr_type' is deprecated [-Wdeprecated-declarations]
+  362 |     ledc_channel.intr_type = LEDC_INTR_DISABLE;
+      |                  ^~~~~~~~~
+In file included from /home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:10:
+/home/costa/esp/esp-idf/components/esp_driver_ledc/include/driver/ledc.h:39:22: note: declared here
+   39 |     ledc_intr_type_t intr_type __attribute__((deprecated));     /*!< @deprecated, no need to explicitly configure interrupt, handled in the driver */
+      |                      ^~~~~~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:362:18: warning: 'ledc_channel_config_t::intr_type' is deprecated [-Wdeprecated-declarations]
+  362 |     ledc_channel.intr_type = LEDC_INTR_DISABLE;
+      |                  ^~~~~~~~~
+/home/costa/esp/esp-idf/components/esp_driver_ledc/include/driver/ledc.h:39:22: note: declared here
+   39 |     ledc_intr_type_t intr_type __attribute__((deprecated));     /*!< @deprecated, no need to explicitly configure interrupt, handled in the driver */
+      |                      ^~~~~~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:362:18: warning: 'ledc_channel_config_t::intr_type' is deprecated [-Wdeprecated-declarations]
+  362 |     ledc_channel.intr_type = LEDC_INTR_DISABLE;
+      |                  ^~~~~~~~~
+/home/costa/esp/esp-idf/components/esp_driver_ledc/include/driver/ledc.h:39:22: note: declared here
+   39 |     ledc_intr_type_t intr_type __attribute__((deprecated));     /*!< @deprecated, no need to explicitly configure interrupt, handled in the driver */
+      |                      ^~~~~~~~~

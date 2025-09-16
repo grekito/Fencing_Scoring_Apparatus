@@ -1,0 +1,29 @@
+Command: make -j 6 flash
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void fencing_setup()':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:360:18: warning: 'ledc_channel_config_t::intr_type' is deprecated [-Wdeprecated-declarations]
+  360 |     ledc_channel.intr_type = LEDC_INTR_DISABLE;
+      |                  ^~~~~~~~~
+In file included from /home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:10:
+/home/costa/esp/esp-idf/components/esp_driver_ledc/include/driver/ledc.h:39:22: note: declared here
+   39 |     ledc_intr_type_t intr_type __attribute__((deprecated));     /*!< @deprecated, no need to explicitly configure interrupt, handled in the driver */
+      |                      ^~~~~~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:360:18: warning: 'ledc_channel_config_t::intr_type' is deprecated [-Wdeprecated-declarations]
+  360 |     ledc_channel.intr_type = LEDC_INTR_DISABLE;
+      |                  ^~~~~~~~~
+/home/costa/esp/esp-idf/components/esp_driver_ledc/include/driver/ledc.h:39:22: note: declared here
+   39 |     ledc_intr_type_t intr_type __attribute__((deprecated));     /*!< @deprecated, no need to explicitly configure interrupt, handled in the driver */
+      |                      ^~~~~~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:360:18: warning: 'ledc_channel_config_t::intr_type' is deprecated [-Wdeprecated-declarations]
+  360 |     ledc_channel.intr_type = LEDC_INTR_DISABLE;
+      |                  ^~~~~~~~~
+/home/costa/esp/esp-idf/components/esp_driver_ledc/include/driver/ledc.h:39:22: note: declared here
+   39 |     ledc_intr_type_t intr_type __attribute__((deprecated));     /*!< @deprecated, no need to explicitly configure interrupt, handled in the driver */
+      |                      ^~~~~~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:362:31: error: 'LEDC_SLEEP_MODE_OFF' was not declared in this scope; did you mean 'LEDC_SPEED_MODE_MAX'?
+  362 |     ledc_channel.sleep_mode = LEDC_SLEEP_MODE_OFF;
+      |                               ^~~~~~~~~~~~~~~~~~~
+      |                               LEDC_SPEED_MODE_MAX
+make[3]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:79: esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj] Error 1
+make[2]: *** [CMakeFiles/Makefile2:7295: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:3007: CMakeFiles/flash.dir/rule] Error 2
+make: *** [Makefile:208: flash] Error 2

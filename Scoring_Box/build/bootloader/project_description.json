@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "bootloader",
-    "project_version":    "v5.5-dirty",
+    "project_version":    "v6.0-dev-2039-g2044fba6e7",
     "project_path":       "/home/costa/esp/esp-idf/components/bootloader/subproject",
     "idf_path":           "/home/costa/esp/esp-idf",
     "build_dir":          "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/bootloader",
@@ -11,7 +11,7 @@
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.5-dirty",
+    "git_revision":       "v6.0-dev-2039-g2044fba6e7",
     "target":             "esp32",
     "rev":                "0",
     "min_rev":            "0",
@@ -19,14 +19,14 @@
     "phy_data_partition": "",
     "monitor_baud" :      "115200",
     "monitor_toolprefix": "xtensa-esp32-elf-",
-    "c_compiler":         "/home/costa/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
+    "c_compiler":         "/home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "/home/costa/esp/esp-idf/components/efuse/Kconfig;/home/costa/esp/esp-idf/components/esp_common/Kconfig;/home/costa/esp/esp-idf/components/esp_hw_support/Kconfig;/home/costa/esp/esp-idf/components/esp_rom/Kconfig;/home/costa/esp/esp-idf/components/esp_security/Kconfig;/home/costa/esp/esp-idf/components/esp_system/Kconfig;/home/costa/esp/esp-idf/components/freertos/Kconfig;/home/costa/esp/esp-idf/components/hal/Kconfig;/home/costa/esp/esp-idf/components/log/Kconfig;/home/costa/esp/esp-idf/components/newlib/Kconfig;/home/costa/esp/esp-idf/components/soc/Kconfig;/home/costa/esp/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS" : "/home/costa/esp/esp-idf/components/efuse/Kconfig;/home/costa/esp/esp-idf/components/esp_common/Kconfig;/home/costa/esp/esp-idf/components/esp_hw_support/Kconfig;/home/costa/esp/esp-idf/components/esp_rom/Kconfig;/home/costa/esp/esp-idf/components/esp_system/Kconfig;/home/costa/esp/esp-idf/components/freertos/Kconfig;/home/costa/esp/esp-idf/components/hal/Kconfig;/home/costa/esp/esp-idf/components/log/Kconfig;/home/costa/esp/esp-idf/components/newlib/Kconfig;/home/costa/esp/esp-idf/components/soc/Kconfig;/home/costa/esp/esp-idf/components/spi_flash/Kconfig",
         "COMPONENT_KCONFIGS_PROJBUILD" : "/home/costa/esp/esp-idf/components/bootloader/Kconfig.projbuild;/home/costa/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/home/costa/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/home/costa/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/home/costa/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "common_component_reqs": [ "log", "esp_rom", "esp_common", "esp_hw_support", "newlib", "xtensa" ],
-    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_hw_support", "esp_rom", "esp_security", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
-    "build_component_paths" : [ "/home/costa/esp/esp-idf/components/bootloader", "/home/costa/esp/esp-idf/components/bootloader_support", "/home/costa/esp/esp-idf/components/efuse", "/home/costa/esp/esp-idf/components/esp_app_format", "/home/costa/esp/esp-idf/components/esp_bootloader_format", "/home/costa/esp/esp-idf/components/esp_common", "/home/costa/esp/esp-idf/components/esp_hw_support", "/home/costa/esp/esp-idf/components/esp_rom", "/home/costa/esp/esp-idf/components/esp_security", "/home/costa/esp/esp-idf/components/esp_system", "/home/costa/esp/esp-idf/components/esptool_py", "/home/costa/esp/esp-idf/components/freertos", "/home/costa/esp/esp-idf/components/hal", "/home/costa/esp/esp-idf/components/log", "/home/costa/esp/esp-idf/components/bootloader/subproject/main", "/home/costa/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "/home/costa/esp/esp-idf/components/newlib", "/home/costa/esp/esp-idf/components/partition_table", "/home/costa/esp/esp-idf/components/soc", "/home/costa/esp/esp-idf/components/spi_flash", "/home/costa/esp/esp-idf/components/xtensa", "" ],
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/home/costa/esp/esp-idf/components/bootloader", "/home/costa/esp/esp-idf/components/bootloader_support", "/home/costa/esp/esp-idf/components/efuse", "/home/costa/esp/esp-idf/components/esp_app_format", "/home/costa/esp/esp-idf/components/esp_bootloader_format", "/home/costa/esp/esp-idf/components/esp_common", "/home/costa/esp/esp-idf/components/esp_hw_support", "/home/costa/esp/esp-idf/components/esp_rom", "/home/costa/esp/esp-idf/components/esp_system", "/home/costa/esp/esp-idf/components/esptool_py", "/home/costa/esp/esp-idf/components/freertos", "/home/costa/esp/esp-idf/components/hal", "/home/costa/esp/esp-idf/components/log", "/home/costa/esp/esp-idf/components/bootloader/subproject/main", "/home/costa/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "/home/costa/esp/esp-idf/components/newlib", "/home/costa/esp/esp-idf/components/partition_table", "/home/costa/esp/esp-idf/components/soc", "/home/costa/esp/esp-idf/components/spi_flash", "/home/costa/esp/esp-idf/components/xtensa", "" ],
     "build_component_info" : {
         "bootloader": {
             "alias": "idf::bootloader",
@@ -51,7 +51,7 @@
             "type": "LIBRARY",
             "lib": "__idf_bootloader_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "micro-ecc", "spi_flash", "efuse", "esp_bootloader_format", "esp_app_format", "hal" ],
+            "priv_reqs": [ "micro-ecc", "spi_flash", "efuse", "esp_bootloader_format", "esp_app_format", "esptool_py", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/bootloader/esp-idf/bootloader_support/libbootloader_support.a",
@@ -126,12 +126,12 @@
             "type": "LIBRARY",
             "lib": "__idf_esp_hw_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_system" ],
+            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/bootloader/esp-idf/esp_hw_support/libesp_hw_support.a",
             "sources": [ "/home/costa/esp/esp-idf/components/esp_hw_support/cpu.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/esp_cpu_intr.c", "/home/costa/esp/esp-idf/components/esp_hw_support/esp_memory_utils.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/cpu_region_protect.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_clk.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_clk_init.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_init.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_sleep.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_time.c", "/home/costa/esp/esp-idf/components/esp_hw_support/port/esp32/chip_info.c" ],
-            "include_dirs": [ "include", "include/soc", "include/soc/esp32", "dma/include", "ldo/include", "debug_probe/include", "mspi_timing_tuning/include", "mspi_timing_tuning/tuning_scheme_impl/include", "power_supply/include" ]
+            "include_dirs": [ "include", "include/soc", "dma/include", "ldo/include", "debug_probe/include", "etm/include", "mspi_timing_tuning/include", "mspi_timing_tuning/tuning_scheme_impl/include", "power_supply/include" ]
         },
         "esp_rom": {
             "alias": "idf::esp_rom",
@@ -145,23 +145,8 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/bootloader/esp-idf/esp_rom/libesp_rom.a",
-            "sources": [ "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_sys.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_print.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_crc.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_uart.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_spiflash.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_efuse.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_gpio.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_longjmp.S" ],
+            "sources": [ "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_sys.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_print.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_crc.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_serial_output.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_spiflash.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_efuse.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_gpio.c", "/home/costa/esp/esp-idf/components/esp_rom/patches/esp_rom_longjmp.S" ],
             "include_dirs": [ "include", "esp32/include", "esp32/include/esp32", "esp32" ]
-        },
-        "esp_security": {
-            "alias": "idf::esp_security",
-            "target": "___idf_esp_security",
-            "prefix": "idf",
-            "dir": "/home/costa/esp/esp-idf/components/esp_security",
-            "type": "CONFIG_ONLY",
-            "lib": "__idf_esp_security",
-            "reqs": [],
-            "priv_reqs": [],
-            "managed_reqs": [],
-            "managed_priv_reqs": [],
-            "file": "",
-            "sources": [],
-            "include_dirs": [ "include" ]
         },
         "esp_system": {
             "alias": "idf::esp_system",
@@ -176,7 +161,7 @@
             "managed_priv_reqs": [],
             "file": "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/bootloader/esp-idf/esp_system/libesp_system.a",
             "sources": [ "/home/costa/esp/esp-idf/components/esp_system/esp_err.c" ],
-            "include_dirs": []
+            "include_dirs": [ "include" ]
         },
         "esptool_py": {
             "alias": "idf::esptool_py",
@@ -388,7 +373,7 @@
             "dir": "/home/costa/esp/esp-idf/components/bootloader_support",
             "lib": "__idf_bootloader_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "micro-ecc", "spi_flash", "efuse", "esp_bootloader_format", "esp_app_format", "hal" ],
+            "priv_reqs": [ "micro-ecc", "spi_flash", "efuse", "esp_bootloader_format", "esp_app_format", "esptool_py", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "bootloader_flash/include", "private_include" ]
@@ -400,7 +385,7 @@
             "dir": "/home/costa/esp/esp-idf/components/bt",
             "lib": "__idf_bt",
             "reqs": [ "esp_timer", "esp_wifi" ],
-            "priv_reqs": [ "nvs_flash", "soc", "esp_pm", "esp_phy", "esp_coex", "mbedtls", "esp_driver_uart", "vfs", "esp_ringbuf", "esp_driver_spi", "esp_driver_gpio", "esp_gdbstub" ],
+            "priv_reqs": [ "nvs_flash", "soc", "esp_pm", "esp_phy", "esp_coex", "mbedtls", "esp_driver_uart", "vfs", "esp_ringbuf", "esp_driver_spi", "esp_driver_gpio", "esp_gdbstub", "esp_security" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": []
@@ -424,7 +409,7 @@
             "dir": "/home/costa/esp/esp-idf/components/console",
             "lib": "__idf_console",
             "reqs": [ "vfs", "esp_vfs_console" ],
-            "priv_reqs": [ "esp_driver_uart", "esp_driver_usb_serial_jtag" ],
+            "priv_reqs": [ "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_usb_cdc_rom_console" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/bootloader" ]
@@ -484,10 +469,10 @@
             "dir": "/home/costa/esp/esp-idf/components/esp_adc",
             "lib": "__idf_esp_adc",
             "reqs": [],
-            "priv_reqs": [ "esp_driver_gpio", "efuse", "esp_pm", "esp_ringbuf", "esp_mm", "esp_driver_i2s", "driver" ],
+            "priv_reqs": [ "esp_driver_gpio", "efuse", "esp_pm", "esp_ringbuf", "esp_mm", "esp_driver_i2s" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include", "interface", "esp32/include", "deprecated/include" ]
+            "include_dirs": [ "include", "interface", "esp32/include" ]
         },
         "esp_app_format": {
             "alias": "idf::esp_app_format",
@@ -633,6 +618,18 @@
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
         },
+        "esp_driver_i3c": {
+            "alias": "idf::esp_driver_i3c",
+            "target": "___idf_esp_driver_i3c",
+            "prefix": "idf",
+            "dir": "/home/costa/esp/esp-idf/components/esp_driver_i3c",
+            "lib": "__idf_esp_driver_i3c",
+            "reqs": [],
+            "priv_reqs": [ "esp_driver_gpio", "esp_pm", "esp_mm" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
+        },
         "esp_driver_isp": {
             "alias": "idf::esp_driver_isp",
             "target": "___idf_esp_driver_isp",
@@ -663,8 +660,8 @@
             "prefix": "idf",
             "dir": "/home/costa/esp/esp-idf/components/esp_driver_ledc",
             "lib": "__idf_esp_driver_ledc",
-            "reqs": [ "esp_driver_gpio" ],
-            "priv_reqs": [ "esp_pm" ],
+            "reqs": [],
+            "priv_reqs": [ "esp_pm", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -729,6 +726,18 @@
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
         },
+        "esp_driver_sd_intf": {
+            "alias": "idf::esp_driver_sd_intf",
+            "target": "___idf_esp_driver_sd_intf",
+            "prefix": "idf",
+            "dir": "/home/costa/esp/esp-idf/components/esp_driver_sd_intf",
+            "lib": "__idf_esp_driver_sd_intf",
+            "reqs": [],
+            "priv_reqs": [ "sdmmc" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
+        },
         "esp_driver_sdio": {
             "alias": "idf::esp_driver_sdio",
             "target": "___idf_esp_driver_sdio",
@@ -759,11 +768,11 @@
             "prefix": "idf",
             "dir": "/home/costa/esp/esp-idf/components/esp_driver_sdmmc",
             "lib": "__idf_esp_driver_sdmmc",
-            "reqs": [ "sdmmc", "esp_driver_gpio" ],
+            "reqs": [ "esp_driver_sd_intf", "sdmmc", "esp_driver_gpio" ],
             "priv_reqs": [ "esp_timer", "esp_pm", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include" ]
+            "include_dirs": [ "include", "legacy/include" ]
         },
         "esp_driver_sdspi": {
             "alias": "idf::esp_driver_sdspi",
@@ -952,10 +961,10 @@
             "dir": "/home/costa/esp/esp-idf/components/esp_hw_support",
             "lib": "__idf_esp_hw_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_system" ],
+            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include", "include/soc", "include/soc/esp32", "dma/include", "ldo/include", "debug_probe/include", "mspi_timing_tuning/include", "mspi_timing_tuning/tuning_scheme_impl/include", "power_supply/include" ]
+            "include_dirs": [ "include", "include/soc", "dma/include", "ldo/include", "debug_probe/include", "etm/include", "mspi_timing_tuning/include", "mspi_timing_tuning/tuning_scheme_impl/include", "power_supply/include" ]
         },
         "esp_lcd": {
             "alias": "idf::esp_lcd",
@@ -1036,7 +1045,7 @@
             "dir": "/home/costa/esp/esp-idf/components/esp_phy",
             "lib": "__idf_esp_phy",
             "reqs": [],
-            "priv_reqs": [ "nvs_flash", "esp_driver_gpio", "efuse", "esp_timer", "esp_wifi" ],
+            "priv_reqs": [ "nvs_flash", "esp_driver_gpio", "efuse", "esp_timer", "esp_wifi", "esptool_py" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "esp32/include" ]
@@ -1111,7 +1120,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": []
+            "include_dirs": [ "include" ]
         },
         "esp_tee": {
             "alias": "idf::esp_tee",
@@ -1123,7 +1132,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": []
+            "include_dirs": [ "include" ]
         },
         "esp_timer": {
             "alias": "idf::esp_timer",
@@ -1137,6 +1146,18 @@
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
         },
+        "esp_usb_cdc_rom_console": {
+            "alias": "idf::esp_usb_cdc_rom_console",
+            "target": "___idf_esp_usb_cdc_rom_console",
+            "prefix": "idf",
+            "dir": "/home/costa/esp/esp-idf/components/esp_usb_cdc_rom_console",
+            "lib": "__idf_esp_usb_cdc_rom_console",
+            "reqs": [],
+            "priv_reqs": [ "esp_timer" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
+        },
         "esp_vfs_console": {
             "alias": "idf::esp_vfs_console",
             "target": "___idf_esp_vfs_console",
@@ -1144,7 +1165,7 @@
             "dir": "/home/costa/esp/esp-idf/components/esp_vfs_console",
             "lib": "__idf_esp_vfs_console",
             "reqs": [],
-            "priv_reqs": [ "vfs", "esp_driver_uart", "esp_driver_usb_serial_jtag" ],
+            "priv_reqs": [ "vfs", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_usb_cdc_rom_console" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -1156,7 +1177,7 @@
             "dir": "/home/costa/esp/esp-idf/components/esp_wifi",
             "lib": "__idf_esp_wifi",
             "reqs": [ "esp_event", "esp_phy", "esp_netif" ],
-            "priv_reqs": [ "esptool_py", "esp_pm", "esp_timer", "nvs_flash", "wpa_supplicant", "hal", "lwip", "esp_coex" ],
+            "priv_reqs": [ "esp_pm", "esp_timer", "nvs_flash", "wpa_supplicant", "hal", "lwip", "esp_coex" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "include/local", "wifi_apps/include", "wifi_apps/nan_app/include" ]
@@ -1192,7 +1213,7 @@
             "dir": "/home/costa/esp/esp-idf/components/fatfs",
             "lib": "__idf_fatfs",
             "reqs": [ "wear_levelling", "sdmmc", "esp_driver_sdmmc", "esp_driver_sdspi" ],
-            "priv_reqs": [ "vfs", "esp_driver_gpio" ],
+            "priv_reqs": [ "vfs", "esp_driver_gpio", "esptool_py" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "diskio", "src", "vfs" ]
@@ -1371,7 +1392,7 @@
             "prefix": "idf",
             "dir": "/home/costa/esp/esp-idf/components/nvs_sec_provider",
             "lib": "__idf_nvs_sec_provider",
-            "reqs": [],
+            "reqs": [ "esp_security" ],
             "priv_reqs": [ "bootloader_support", "efuse", "esp_partition", "nvs_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
@@ -1516,7 +1537,7 @@
             "dir": "/home/costa/esp/esp-idf/components/spiffs",
             "lib": "__idf_spiffs",
             "reqs": [ "esp_partition" ],
-            "priv_reqs": [ "bootloader_support", "esptool_py", "vfs" ],
+            "priv_reqs": [ "bootloader_support", "vfs", "esptool_py" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]
@@ -1576,7 +1597,7 @@
             "dir": "/home/costa/esp/esp-idf/components/usb",
             "lib": "__idf_usb",
             "reqs": [],
-            "priv_reqs": [ "esp_driver_gpio", "esp_mm" ],
+            "priv_reqs": [ "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": []
@@ -1588,7 +1609,7 @@
             "dir": "/home/costa/esp/esp-idf/components/vfs",
             "lib": "__idf_vfs",
             "reqs": [],
-            "priv_reqs": [ "esp_timer", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_vfs_console" ],
+            "priv_reqs": [ "esp_vfs_console" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include" ]

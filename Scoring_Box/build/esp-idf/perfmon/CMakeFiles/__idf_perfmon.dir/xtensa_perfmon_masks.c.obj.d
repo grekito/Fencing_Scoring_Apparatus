@@ -1,0 +1,24 @@
+esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/xtensa_perfmon_masks.c.obj: \
+ /home/costa/esp/esp-idf/components/perfmon/xtensa_perfmon_masks.c \
+ /home/costa/esp/esp-idf/components/perfmon/include/xtensa_perfmon_masks.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/newlib.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/sys/_intsup.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/_ansi.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.1.0/include/stdint.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/stdint.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/sys/_stdint.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.1.0/include/stddef.h \
+ /home/costa/.espressif/tools/xtensa-esp-elf/esp-15.1.0_20250607/xtensa-esp-elf/xtensa-esp-elf/include/sys/_locale.h \
+ /home/costa/esp/esp-idf/components/xtensa/include/xtensa/xt_perf_consts.h \
+ /home/costa/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
+ /home/costa/esp/esp-idf/components/xtensa/include/xtensa/hal.h \
+ /home/costa/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
+ /home/costa/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h \
+ /home/costa/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /home/costa/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h

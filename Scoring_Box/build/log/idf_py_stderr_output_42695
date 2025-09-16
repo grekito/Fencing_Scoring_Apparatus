@@ -1,0 +1,86 @@
+Command: make -j 6 all
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void sabre()':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:325:15: error: 'ledc_timer' was not declared in this scope; did you mean 'ledc_timer_t'?
+  325 |               ledc_timer.freq_hz = BUZZER_FREQ;
+      |               ^~~~~~~~~~
+      |               ledc_timer_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void fencing_setup()':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:347:7: error: 'ledc_timer' was not declared in this scope; did you mean 'ledc_timer_t'?
+  347 |       ledc_timer.speed_mode = LEDC_LOW_SPEED_MODE;
+      |       ^~~~~~~~~~
+      |       ledc_timer_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:347:50: error: expected '}' before ';' token
+  347 |       ledc_timer.speed_mode = LEDC_LOW_SPEED_MODE;
+      |                                                  ^
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:346:38: note: to match this '{'
+  346 |     ledc_timer_config_t timer_conf = {
+      |                                      ^
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:346:25: warning: unused variable 'timer_conf' [-Wunused-variable]
+  346 |     ledc_timer_config_t timer_conf = {
+      |                         ^~~~~~~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: At global scope:
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:355:22: error: expected constructor, destructor, or type conversion before '(' token
+  355 |     ledc_timer_config(&timer_conf);
+      |                      ^
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:358:7: error: 'ledc_channel' was not declared in this scope; did you mean 'ledc_channel_t'?
+  358 |       ledc_channel.speed_mode = LEDC_LOW_SPEED_MODE;
+      |       ^~~~~~~~~~~~
+      |       ledc_channel_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:358:52: error: expected '}' before ';' token
+  358 |       ledc_channel.speed_mode = LEDC_LOW_SPEED_MODE;
+      |                                                    ^
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:357:39: note: to match this '{'
+  357 |     ledc_channel_config_t ledc_conf = {
+      |                                       ^
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:359:7: error: 'ledc_channel' does not name a type; did you mean 'ledc_channel_t'?
+  359 |       ledc_channel.channel = BUZZER_CHANNEL;
+      |       ^~~~~~~~~~~~
+      |       ledc_channel_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:360:7: error: 'ledc_timer' does not name a type; did you mean 'ledc_timer_t'?
+  360 |       ledc_timer.timer_sel = LEDC_TIMER_0;
+      |       ^~~~~~~~~~
+      |       ledc_timer_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:361:7: error: 'ledc_channel' does not name a type; did you mean 'ledc_channel_t'?
+  361 |       ledc_channel.gpio_num = BUZZER;
+      |       ^~~~~~~~~~~~
+      |       ledc_channel_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:362:7: error: 'ledc_channel' does not name a type; did you mean 'ledc_channel_t'?
+  362 |       ledc_channel.duty = 0;
+      |       ^~~~~~~~~~~~
+      |       ledc_channel_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:363:7: error: 'ledc_channel' does not name a type; did you mean 'ledc_channel_t'?
+  363 |       ledc_channel.hpoint = 0;
+      |       ^~~~~~~~~~~~
+      |       ledc_channel_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:364:7: error: 'ledc_channel' does not name a type; did you mean 'ledc_channel_t'?
+  364 |       ledc_channel.intr_type = LEDC_INTR_DISABLE;
+      |       ^~~~~~~~~~~~
+      |       ledc_channel_t
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:365:5: error: expected declaration before '}' token
+  365 |     };
+      |     ^
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:367:24: error: expected constructor, destructor, or type conversion before '(' token
+  367 |     ledc_channel_config(&ledc_conf);
+      |                        ^
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:369:20: error: expected constructor, destructor, or type conversion before '(' token
+  369 |     setBuzzerVolume(current_volume);
+      |                    ^
+In file included from /home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:5:
+/home/costa/esp/esp-idf/components/log/include/esp_log.h:79:36: error: expected unqualified-id before 'do'
+   79 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format __VA_OPT__(,) __VA_ARGS__); } while(0)
+      |                                    ^~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:370:5: note: in expansion of macro 'ESP_LOGI'
+  370 |     ESP_LOGI(TAG, "Fencing Scoring Apparatus setup complete.");
+      |     ^~~~~~~~
+/home/costa/esp/esp-idf/components/log/include/esp_log.h:79:117: error: expected unqualified-id before 'while'
+   79 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format __VA_OPT__(,) __VA_ARGS__); } while(0)
+      |                                                                                                                     ^~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:370:5: note: in expansion of macro 'ESP_LOGI'
+  370 |     ESP_LOGI(TAG, "Fencing Scoring Apparatus setup complete.");
+      |     ^~~~~~~~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:371:1: error: expected declaration before '}' token
+  371 | }
+      | ^
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:79: esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7295: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

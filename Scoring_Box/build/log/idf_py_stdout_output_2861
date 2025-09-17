@@ -1,0 +1,712 @@
+Command: /home/costa/.espressif/python_env/idf6.0_py3.13_env/bin/python /home/costa/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/Scoring_Box.elf /home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build/bootloader/bootloader.elf -m '/home/costa/.espressif/python_env/idf6.0_py3.13_env/bin/python' '/home/costa/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6376
+load:0x40078000,len:15864
+load:0x40080400,len:3908
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0-dev-2039-g2044fba6e7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Sep 16 2025 13:48:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=19b0ch (105228) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=00029b34 vaddr=3ffb0000 size=04194h ( 16788) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002dcd0 vaddr=40080000 size=02348h (  9032) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=841c0h (541120) map[0m
+[0;32mI (330) esp_image: segment 4: paddr=000b41e8 vaddr=40082348 size=15a80h ( 88704) load[0m
+[0;32mI (366) esp_image: segment 5: paddr=000c9c70 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (378) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (378) boot: Disabling RNG early entropy source...[0m
+[0;32mI (389) cpu_start: Multicore app[0m
+[0;32mI (397) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (397) cpu_start: Pro cpu start user code[0m
+[0;32mI (397) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (399) app_init: Application information:[0m
+[0;32mI (403) app_init: Project name:     Scoring_Box[0m
+[0;32mI (407) app_init: App version:      fd654c8-dirty[0m
+[0;32mI (411) app_init: Compile time:     Sep 16 2025 22:46:21[0m
+[0;32mI (416) app_init: ELF file SHA256:  6c9e2107e...[0m
+[0;32mI (421) app_init: ESP-IDF:          v6.0-dev-2039-g2044fba6e7[0m
+[0;32mI (426) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (430) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (434) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (438) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (444) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (449) heap_init: At 3FFB8350 len 00027CB0 (159 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (460) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (465) heap_init: At 40097DC8 len 00008238 (32 KiB): IRAM[0m
+[0;33mW (472) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (484) spi_flash: detected chip: generic[0m
+[0;32mI (487) spi_flash: flash io: dio[0m
+[0;33mW (490) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (504) main_task: Started on CPU0[0m
+[0;32mI (514) main_task: Calling app_main()[0m
+[0;32mI (544) wifi:wifi driver task: 3ffc029c, prio:23, stack:6656, core=0[0m
+[0;32mI (554) wifi:wifi firmware version: df85326[0m
+[0;32mI (554) wifi:wifi certification version: v7.0[0m
+[0;32mI (554) wifi:config NVS flash: enabled[0m
+[0;32mI (554) wifi:config nano formatting: disabled[0m
+[0;32mI (554) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (554) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (564) wifi:Init management short buffer num: 32[0m
+[0;32mI (564) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (574) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (574) wifi:Init static rx buffer num: 10[0m
+[0;32mI (584) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (584) wifi_init: rx ba win: 6[0m
+[0;32mI (584) wifi_init: accept mbox: 6[0m
+[0;32mI (584) wifi_init: tcpip mbox: 32[0m
+[0;32mI (594) wifi_init: udp mbox: 6[0m
+[0;32mI (594) wifi_init: tcp mbox: 6[0m
+[0;32mI (594) wifi_init: tcp tx win: 5760[0m
+[0;32mI (604) wifi_init: tcp rx win: 5760[0m
+[0;32mI (604) wifi_init: tcp mss: 1440[0m
+[0;32mI (604) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (614) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (614) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (704) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (724) wifi:mode : sta (3c:8a:1f:79:03:a8)[0m
+[0;32mI (724) wifi:enable tsf[0m
+[0;32mI (724) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (734) FencingScoring: Fencing Scoring Apparatus setup complete.[0m
+[0;32mI (734) FencingScoring: Mode button on GPIO_NUM_32. Press to cycle modes.[0m
+[0;32mI (734) main_task: Returned from app_main()[0m
+[0;32mI (2744) FencingScoring: Mode changed: FOIL[0m
+[0;32mI (13194) FencingScoring: Mode changed: SABRE[0m
+[0;32mI (14814) FencingScoring: Mode changed: EPEE[0m
+[0;32mI (15644) FencingScoring: Mode changed: FOIL[0m
+[0;32mI (21194) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (21284) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (21384) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (21494) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (21584) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (21684) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (21784) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (21884) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=7[0m
+[0;32mI (21984) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (22084) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (22194) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=18[0m
+[0;32mI (22284) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (22384) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (22384) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (22484) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (22584) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (22684) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=16[0m
+[0;32mI (22784) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (22884) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (22984) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (23094) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (23194) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (23294) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (23394) FencingScoring: Red Fencer: weapon=4095, lame=4, mass=10[0m
+[0;32mI (23494) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (23594) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (23694) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (23794) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=10[0m
+[0;32mI (23894) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (23994) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (24094) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (24194) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (24294) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (24394) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (24494) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (24594) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (24694) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (24794) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (24894) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (24994) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (25094) FencingScoring: Red Fencer: weapon=4095, lame=9, mass=9[0m
+[0;32mI (25194) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=7[0m
+[0;32mI (25294) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=7[0m
+[0;32mI (25394) FencingScoring: Red Fencer: weapon=4095, lame=10, mass=7[0m
+[0;32mI (25494) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (25594) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (25694) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (25794) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (25894) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (25994) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (26094) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (26194) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (26294) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (26394) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (26494) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (26594) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (26674) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (26694) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (26794) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (26904) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (26994) FencingScoring: Red Fencer: weapon=4095, lame=16, mass=16[0m
+[0;32mI (27104) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (27204) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (27304) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=17[0m
+[0;32mI (27404) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (27504) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=18[0m
+[0;32mI (27604) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (27704) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (27804) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (27904) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (28004) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (28104) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (28204) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (28304) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=7[0m
+[0;32mI (28404) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (28504) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (28604) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=17[0m
+[0;32mI (28704) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (28804) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (28904) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (29004) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (29104) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (29204) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (29304) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (29404) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (29504) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (29604) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (29704) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (29804) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=9[0m
+[0;32mI (29904) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (30004) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (30104) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (30204) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (30304) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (30404) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (30504) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (30604) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (30704) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (30804) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (30904) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (30964) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (31004) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (31114) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=18[0m
+[0;32mI (31214) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (31314) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (31414) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (31514) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (31614) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (31714) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (31814) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (31914) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (32014) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (32114) FencingScoring: Red Fencer: weapon=2295, lame=7, mass=2296[0m
+[0;32mI (32214) FencingScoring: Red Fencer: weapon=2284, lame=7, mass=2296[0m
+[0;32mI (32314) FencingScoring: Red Fencer: weapon=2296, lame=6, mass=2298[0m
+[0;32mI (32414) FencingScoring: Red Fencer: weapon=2295, lame=6, mass=2296[0m
+[0;32mI (32514) FencingScoring: Red Fencer: weapon=2295, lame=6, mass=2295[0m
+[0;32mI (32614) FencingScoring: Red Fencer: weapon=2297, lame=5, mass=2296[0m
+[0;32mI (32714) FencingScoring: Red Fencer: weapon=2287, lame=6, mass=2296[0m
+[0;32mI (32814) FencingScoring: Red Fencer: weapon=2297, lame=7, mass=2287[0m
+[0;32mI (32914) FencingScoring: Red Fencer: weapon=2297, lame=5, mass=2297[0m
+[0;32mI (33014) FencingScoring: Red Fencer: weapon=2296, lame=5, mass=2297[0m
+[0;32mI (33114) FencingScoring: Red Fencer: weapon=2298, lame=5, mass=2297[0m
+[0;32mI (33214) FencingScoring: Red Fencer: weapon=2296, lame=6, mass=2296[0m
+[0;32mI (33314) FencingScoring: Red Fencer: weapon=2297, lame=6, mass=2297[0m
+[0;32mI (33414) FencingScoring: Red Fencer: weapon=2297, lame=5, mass=2295[0m
+[0;32mI (33514) FencingScoring: Red Fencer: weapon=2296, lame=5, mass=2296[0m
+[0;32mI (33614) FencingScoring: Red Fencer: weapon=2295, lame=7, mass=2297[0m
+[0;32mI (33714) FencingScoring: Red Fencer: weapon=2297, lame=7, mass=2297[0m
+[0;32mI (33814) FencingScoring: Red Fencer: weapon=2295, lame=6, mass=2296[0m
+[0;32mI (33914) FencingScoring: Red Fencer: weapon=2295, lame=5, mass=2297[0m
+[0;32mI (34014) FencingScoring: Red Fencer: weapon=2296, lame=7, mass=2297[0m
+[0;32mI (34114) FencingScoring: Red Fencer: weapon=2296, lame=5, mass=2297[0m
+[0;32mI (34214) FencingScoring: Red Fencer: weapon=2295, lame=6, mass=2296[0m
+[0;32mI (34314) FencingScoring: Red Fencer: weapon=2296, lame=6, mass=2297[0m
+[0;32mI (34414) FencingScoring: Red Fencer: weapon=2295, lame=5, mass=2297[0m
+[0;32mI (34514) FencingScoring: Red Fencer: weapon=2296, lame=6, mass=2296[0m
+[0;32mI (34614) FencingScoring: Red Fencer: weapon=2296, lame=6, mass=2297[0m
+[0;32mI (34714) FencingScoring: Red Fencer: weapon=2295, lame=4, mass=2297[0m
+[0;32mI (34814) FencingScoring: Red Fencer: weapon=2296, lame=6, mass=2296[0m
+[0;32mI (34914) FencingScoring: Red Fencer: weapon=2297, lame=7, mass=2295[0m
+[0;32mI (35014) FencingScoring: Red Fencer: weapon=2296, lame=7, mass=2296[0m
+[0;32mI (35124) FencingScoring: Red Fencer: weapon=2297, lame=5, mass=2296[0m
+[0;32mI (35224) FencingScoring: Red Fencer: weapon=2296, lame=5, mass=2296[0m
+[0;32mI (35324) FencingScoring: Red Fencer: weapon=2295, lame=4, mass=2296[0m
+[0;32mI (35424) FencingScoring: Red Fencer: weapon=2296, lame=6, mass=2296[0m
+[0;32mI (35524) FencingScoring: Red Fencer: weapon=2296, lame=5, mass=2297[0m
+[0;32mI (35624) FencingScoring: Red Fencer: weapon=2298, lame=5, mass=2296[0m
+[0;32mI (35724) FencingScoring: Red Fencer: weapon=2297, lame=6, mass=2296[0m
+[0;32mI (35824) FencingScoring: Red Fencer: weapon=2296, lame=7, mass=2299[0m
+[0;32mI (35924) FencingScoring: Red Fencer: weapon=2296, lame=5, mass=2296[0m
+[0;32mI (36024) FencingScoring: Red Fencer: weapon=2297, lame=6, mass=2297[0m
+[0;32mI (36124) FencingScoring: Red Fencer: weapon=2295, lame=4, mass=2297[0m
+[0;32mI (36224) FencingScoring: Red Fencer: weapon=2287, lame=7, mass=2295[0m
+[0;32mI (36324) FencingScoring: Red Fencer: weapon=2296, lame=5, mass=2296[0m
+[0;32mI (36424) FencingScoring: Red Fencer: weapon=2297, lame=7, mass=2295[0m
+[0;32mI (36524) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (36624) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (36724) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (36824) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (36924) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (37024) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (37124) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (37224) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (37324) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (37424) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (37524) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=16[0m
+[0;32mI (37624) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (37714) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (37724) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=7[0m
+[0;32mI (37824) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (37924) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (38024) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (38124) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (38224) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (38324) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (38424) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=7[0m
+[0;32mI (38524) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=16[0m
+[0;32mI (38624) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (38724) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (38824) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (38934) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (39024) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (39134) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (39234) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=16[0m
+[0;32mI (39334) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=9[0m
+[0;32mI (39434) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (39534) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (39634) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (39734) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (39834) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (39934) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (40034) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (40134) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (40234) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (40334) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (40434) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (40534) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (40634) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=18[0m
+[0;32mI (40734) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (40834) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (40934) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (42004) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (46294) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (50584) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (53694) FencingScoring: Mode changed: SABRE[0m
+[0;32mI (54814) FencingScoring: Mode changed: EPEE[0m
+[0;32mI (55394) FencingScoring: Mode changed: FOIL[0m
+[0;32mI (56574) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (60864) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (65154) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (69444) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 1, hitOnTargetRD: 0, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (72554) FencingScoring: Mode changed: SABRE[0m
+[0;32mI (74314) FencingScoring: Mode changed: EPEE[0m
+[0;32mI (79004) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (79104) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (79204) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=9[0m
+[0;32mI (79304) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (79404) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (79504) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=7[0m
+[0;32mI (79604) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (79704) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (79804) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (79904) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (80004) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (80104) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=17[0m
+[0;32mI (80204) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (80304) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (80404) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (80504) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=16[0m
+[0;32mI (80604) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (80704) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (80804) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (80914) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=18[0m
+[0;32mI (81014) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (81114) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (81214) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (81314) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=9[0m
+[0;32mI (81414) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (81514) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (81614) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (81714) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (81814) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (81914) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (82014) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (82114) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (82214) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (82314) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (82414) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (82514) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (82614) FencingScoring: Red Fencer: weapon=4095, lame=16, mass=7[0m
+[0;32mI (82714) FencingScoring: Red Fencer: weapon=2296, lame=2296, mass=16[0m
+[0;32mI (82814) FencingScoring: Red Fencer: weapon=2297, lame=2287, mass=18[0m
+[0;32mI (82914) FencingScoring: Red Fencer: weapon=2299, lame=2297, mass=8[0m
+[0;32mI (83014) FencingScoring: Red Fencer: weapon=2296, lame=2288, mass=9[0m
+[0;32mI (83114) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (83214) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (83314) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (83414) FencingScoring: Red Fencer: weapon=4095, lame=4, mass=8[0m
+[0;32mI (83514) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (83614) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (83714) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (83774) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 0, hitOnTargetRD: 1, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (83814) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (83914) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (84014) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (84114) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=16[0m
+[0;32mI (84214) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=16[0m
+[0;32mI (84314) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (84414) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (84514) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (84614) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (84714) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (84814) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (84924) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=9[0m
+[0;32mI (85024) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (85124) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (85224) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (85324) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=7[0m
+[0;32mI (85424) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (85524) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (85624) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (85724) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (85824) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (85924) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (86024) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=17[0m
+[0;32mI (86124) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (86224) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (86324) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (86424) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (86524) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (86624) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (86724) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (86824) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (86924) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (87024) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=7[0m
+[0;32mI (87124) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=18[0m
+[0;32mI (87224) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=17[0m
+[0;32mI (87324) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (87424) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (87524) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (87624) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (87724) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (87824) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (87924) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (88024) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (88124) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (88224) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (88324) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (88424) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (88524) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (88624) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (88724) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (88824) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (88934) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=7[0m
+[0;32mI (89034) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (89134) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (89234) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (89334) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (89434) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (89534) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (89634) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (89734) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (89834) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (89934) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (90034) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (90134) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (90234) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (90334) FencingScoring: Red Fencer: weapon=4095, lame=16, mass=8[0m
+[0;32mI (90434) FencingScoring: Red Fencer: weapon=4095, lame=9, mass=8[0m
+[0;32mI (90534) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=17[0m
+[0;32mI (90634) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (90734) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=7[0m
+[0;32mI (90834) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (90934) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (91034) FencingScoring: Red Fencer: weapon=4095, lame=10, mass=17[0m
+[0;32mI (91134) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (91234) FencingScoring: Red Fencer: weapon=4095, lame=9, mass=10[0m
+[0;32mI (91334) FencingScoring: Red Fencer: weapon=4095, lame=9, mass=8[0m
+[0;32mI (91434) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (91534) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (91634) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=7[0m
+[0;32mI (91734) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (91834) FencingScoring: Red Fencer: weapon=4095, lame=17, mass=9[0m
+[0;32mI (91934) FencingScoring: Red Fencer: weapon=2298, lame=2297, mass=8[0m
+[0;32mI (92034) FencingScoring: Red Fencer: weapon=2298, lame=2296, mass=10[0m
+[0;32mI (92134) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=9[0m
+[0;32mI (92234) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=17[0m
+[0;32mI (92334) FencingScoring: Red Fencer: weapon=2298, lame=2296, mass=10[0m
+[0;32mI (92434) FencingScoring: Red Fencer: weapon=2299, lame=2296, mass=8[0m
+[0;32mI (92534) FencingScoring: Red Fencer: weapon=2301, lame=2296, mass=10[0m
+[0;32mI (92634) FencingScoring: Red Fencer: weapon=2299, lame=2298, mass=9[0m
+[0;32mI (92734) FencingScoring: Red Fencer: weapon=2318, lame=2280, mass=17[0m
+[0;32mI (92834) FencingScoring: Red Fencer: weapon=2301, lame=2296, mass=10[0m
+[0;32mI (92944) FencingScoring: Red Fencer: weapon=2303, lame=2284, mass=16[0m
+[0;32mI (92994) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 0, hitOnTargetRD: 1, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (93044) FencingScoring: Red Fencer: weapon=2298, lame=2296, mass=9[0m
+[0;32mI (93144) FencingScoring: Red Fencer: weapon=2299, lame=2299, mass=10[0m
+[0;32mI (93244) FencingScoring: Red Fencer: weapon=2299, lame=2296, mass=16[0m
+[0;32mI (93344) FencingScoring: Red Fencer: weapon=2299, lame=2297, mass=9[0m
+[0;32mI (93444) FencingScoring: Red Fencer: weapon=2300, lame=2297, mass=9[0m
+[0;32mI (93544) FencingScoring: Red Fencer: weapon=2300, lame=2296, mass=7[0m
+[0;32mI (93644) FencingScoring: Red Fencer: weapon=2298, lame=2297, mass=16[0m
+[0;32mI (93744) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=9[0m
+[0;32mI (93844) FencingScoring: Red Fencer: weapon=2299, lame=2297, mass=9[0m
+[0;32mI (93944) FencingScoring: Red Fencer: weapon=2300, lame=2298, mass=8[0m
+[0;32mI (94044) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=16[0m
+[0;32mI (94144) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=17[0m
+[0;32mI (94244) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (94344) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (94444) FencingScoring: Red Fencer: weapon=4095, lame=9, mass=10[0m
+[0;32mI (94544) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (94644) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (94744) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (94844) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (94944) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (95044) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (95144) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (95244) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (95344) FencingScoring: Red Fencer: weapon=4095, lame=23, mass=9[0m
+[0;32mI (95444) FencingScoring: Red Fencer: weapon=4095, lame=27, mass=8[0m
+[0;32mI (95544) FencingScoring: Red Fencer: weapon=4095, lame=25, mass=9[0m
+[0;32mI (95644) FencingScoring: Red Fencer: weapon=4095, lame=25, mass=8[0m
+[0;32mI (95744) FencingScoring: Red Fencer: weapon=4095, lame=24, mass=16[0m
+[0;32mI (95844) FencingScoring: Red Fencer: weapon=4095, lame=24, mass=9[0m
+[0;32mI (95944) FencingScoring: Red Fencer: weapon=4095, lame=25, mass=7[0m
+[0;32mI (96044) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=9[0m
+[0;32mI (96144) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=8[0m
+[0;32mI (96244) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=8[0m
+[0;32mI (96344) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=8[0m
+[0;32mI (96444) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=16[0m
+[0;32mI (96544) FencingScoring: Red Fencer: weapon=4095, lame=17, mass=16[0m
+[0;32mI (96644) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=10[0m
+[0;32mI (96744) FencingScoring: Red Fencer: weapon=4095, lame=20, mass=8[0m
+[0;32mI (96844) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=8[0m
+[0;32mI (96954) FencingScoring: Red Fencer: weapon=4095, lame=26, mass=9[0m
+[0;32mI (97054) FencingScoring: Red Fencer: weapon=4095, lame=27, mass=8[0m
+[0;32mI (97154) FencingScoring: Red Fencer: weapon=2298, lame=2296, mass=17[0m
+[0;32mI (97254) FencingScoring: Red Fencer: weapon=4095, lame=30, mass=10[0m
+[0;32mI (97354) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=9[0m
+[0;32mI (97454) FencingScoring: Red Fencer: weapon=4095, lame=20, mass=8[0m
+[0;32mI (97554) FencingScoring: Red Fencer: weapon=4095, lame=22, mass=17[0m
+[0;32mI (97654) FencingScoring: Red Fencer: weapon=4095, lame=26, mass=16[0m
+[0;32mI (97754) FencingScoring: Red Fencer: weapon=4095, lame=25, mass=8[0m
+[0;32mI (97854) FencingScoring: Red Fencer: weapon=4095, lame=28, mass=16[0m
+[0;32mI (97954) FencingScoring: Red Fencer: weapon=4095, lame=27, mass=10[0m
+[0;32mI (98054) FencingScoring: Red Fencer: weapon=4095, lame=24, mass=8[0m
+[0;32mI (98154) FencingScoring: Red Fencer: weapon=4095, lame=26, mass=16[0m
+[0;32mI (98214) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 0, hitOnTargetRD: 1, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (98254) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=10[0m
+[0;32mI (98354) FencingScoring: Red Fencer: weapon=4095, lame=23, mass=8[0m
+[0;32mI (98454) FencingScoring: Red Fencer: weapon=2299, lame=2295, mass=17[0m
+[0;32mI (98554) FencingScoring: Red Fencer: weapon=4095, lame=25, mass=8[0m
+[0;32mI (98654) FencingScoring: Red Fencer: weapon=4095, lame=58, mass=8[0m
+[0;32mI (98754) FencingScoring: Red Fencer: weapon=4095, lame=30, mass=9[0m
+[0;32mI (98854) FencingScoring: Red Fencer: weapon=4095, lame=29, mass=8[0m
+[0;32mI (98954) FencingScoring: Red Fencer: weapon=2300, lame=2297, mass=9[0m
+[0;32mI (99054) FencingScoring: Red Fencer: weapon=2301, lame=2297, mass=8[0m
+[0;32mI (99154) FencingScoring: Red Fencer: weapon=2300, lame=2296, mass=19[0m
+[0;32mI (99254) FencingScoring: Red Fencer: weapon=2301, lame=2296, mass=16[0m
+[0;32mI (99354) FencingScoring: Red Fencer: weapon=2300, lame=2297, mass=16[0m
+[0;32mI (99454) FencingScoring: Red Fencer: weapon=2299, lame=2298, mass=10[0m
+[0;32mI (99554) FencingScoring: Red Fencer: weapon=2300, lame=2297, mass=8[0m
+[0;32mI (99654) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=18[0m
+[0;32mI (99754) FencingScoring: Red Fencer: weapon=2298, lame=2296, mass=9[0m
+[0;32mI (99854) FencingScoring: Red Fencer: weapon=4095, lame=23, mass=8[0m
+[0;32mI (99954) FencingScoring: Red Fencer: weapon=2299, lame=2296, mass=17[0m
+[0;32mI (100054) FencingScoring: Red Fencer: weapon=2297, lame=2299, mass=16[0m
+[0;32mI (100154) FencingScoring: Red Fencer: weapon=2298, lame=2296, mass=8[0m
+[0;32mI (100254) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=10[0m
+[0;32mI (100354) FencingScoring: Red Fencer: weapon=2299, lame=2299, mass=18[0m
+[0;32mI (100454) FencingScoring: Red Fencer: weapon=2298, lame=2297, mass=16[0m
+[0;32mI (100554) FencingScoring: Red Fencer: weapon=2297, lame=2298, mass=9[0m
+[0;32mI (100654) FencingScoring: Red Fencer: weapon=2300, lame=2298, mass=9[0m
+[0;32mI (100754) FencingScoring: Red Fencer: weapon=2297, lame=2296, mass=10[0m
+[0;32mI (100854) FencingScoring: Red Fencer: weapon=2303, lame=2298, mass=9[0m
+[0;32mI (100964) FencingScoring: Red Fencer: weapon=2297, lame=2298, mass=8[0m
+[0;32mI (101064) FencingScoring: Red Fencer: weapon=2300, lame=2296, mass=9[0m
+[0;32mI (101164) FencingScoring: Red Fencer: weapon=2299, lame=2298, mass=10[0m
+[0;32mI (101264) FencingScoring: Red Fencer: weapon=2299, lame=2296, mass=10[0m
+[0;32mI (101364) FencingScoring: Red Fencer: weapon=2299, lame=2297, mass=7[0m
+[0;32mI (101464) FencingScoring: Red Fencer: weapon=2299, lame=2298, mass=16[0m
+[0;32mI (101564) FencingScoring: Red Fencer: weapon=2299, lame=2297, mass=9[0m
+[0;32mI (101664) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=10[0m
+[0;32mI (101764) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (101864) FencingScoring: Red Fencer: weapon=2300, lame=2297, mass=10[0m
+[0;32mI (101964) FencingScoring: Red Fencer: weapon=2302, lame=2300, mass=17[0m
+[0;32mI (102064) FencingScoring: Red Fencer: weapon=2299, lame=2298, mass=16[0m
+[0;32mI (102164) FencingScoring: Red Fencer: weapon=2299, lame=2298, mass=17[0m
+[0;32mI (102264) FencingScoring: Red Fencer: weapon=2314, lame=2296, mass=16[0m
+[0;32mI (102364) FencingScoring: Red Fencer: weapon=2298, lame=2297, mass=18[0m
+[0;32mI (102374) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 0, hitOnTargetRD: 1, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (102464) FencingScoring: Red Fencer: weapon=2300, lame=2297, mass=10[0m
+[0;32mI (102564) FencingScoring: Red Fencer: weapon=4095, lame=22, mass=8[0m
+[0;32mI (102664) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (102764) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=16[0m
+[0;32mI (102864) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=7[0m
+[0;32mI (102964) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=8[0m
+[0;32mI (103064) FencingScoring: Red Fencer: weapon=4095, lame=20, mass=10[0m
+[0;32mI (103164) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=9[0m
+[0;32mI (103264) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=8[0m
+[0;32mI (103364) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=9[0m
+[0;32mI (103464) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=8[0m
+[0;32mI (103564) FencingScoring: Red Fencer: weapon=4095, lame=9, mass=16[0m
+[0;32mI (103664) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (103764) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (103864) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=8[0m
+[0;32mI (103964) FencingScoring: Red Fencer: weapon=4095, lame=22, mass=10[0m
+[0;32mI (104064) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=8[0m
+[0;32mI (104164) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=8[0m
+[0;32mI (104264) FencingScoring: Red Fencer: weapon=4095, lame=20, mass=8[0m
+[0;32mI (104364) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=17[0m
+[0;32mI (104464) FencingScoring: Red Fencer: weapon=4095, lame=20, mass=7[0m
+[0;32mI (104564) FencingScoring: Red Fencer: weapon=4095, lame=19, mass=10[0m
+[0;32mI (104664) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=8[0m
+[0;32mI (104764) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=10[0m
+[0;32mI (104864) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=17[0m
+[0;32mI (104974) FencingScoring: Red Fencer: weapon=4095, lame=23, mass=16[0m
+[0;32mI (105064) FencingScoring: Red Fencer: weapon=4095, lame=24, mass=9[0m
+[0;32mI (105164) FencingScoring: Red Fencer: weapon=4095, lame=23, mass=8[0m
+[0;32mI (105264) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (105364) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=7[0m
+[0;32mI (105464) FencingScoring: Red Fencer: weapon=4095, lame=20, mass=16[0m
+[0;32mI (105564) FencingScoring: Red Fencer: weapon=4095, lame=24, mass=9[0m
+[0;32mI (105664) FencingScoring: Red Fencer: weapon=4095, lame=22, mass=8[0m
+[0;32mI (105764) FencingScoring: Red Fencer: weapon=4095, lame=21, mass=10[0m
+[0;32mI (105864) FencingScoring: Red Fencer: weapon=4095, lame=22, mass=7[0m
+[0;32mI (105964) FencingScoring: Red Fencer: weapon=4095, lame=22, mass=8[0m
+[0;32mI (106064) FencingScoring: Red Fencer: weapon=4095, lame=42, mass=8[0m
+[0;32mI (106164) FencingScoring: Red Fencer: weapon=4095, lame=30, mass=8[0m
+[0;32mI (106264) FencingScoring: Red Fencer: weapon=4095, lame=29, mass=7[0m
+[0;32mI (106364) FencingScoring: Red Fencer: weapon=4095, lame=29, mass=8[0m
+[0;32mI (106464) FencingScoring: Red Fencer: weapon=4095, lame=27, mass=16[0m
+[0;32mI (106564) FencingScoring: Red Fencer: weapon=4095, lame=27, mass=8[0m
+[0;32mI (106664) FencingScoring: Red Fencer: weapon=4095, lame=26, mass=16[0m
+[0;32mI (106764) FencingScoring: Red Fencer: weapon=4095, lame=26, mass=17[0m
+[0;32mI (106864) FencingScoring: Red Fencer: weapon=4095, lame=26, mass=8[0m
+[0;32mI (106974) FencingScoring: Red Fencer: weapon=4095, lame=28, mass=8[0m
+[0;32mI (107074) FencingScoring: Red Fencer: weapon=4095, lame=17, mass=8[0m
+[0;32mI (107174) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=10[0m
+[0;32mI (107274) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (107374) FencingScoring: Red Fencer: weapon=2336, lame=2266, mass=8[0m
+[0;32mI (107474) FencingScoring: Red Fencer: weapon=2298, lame=2297, mass=9[0m
+[0;32mI (107574) FencingScoring: Red Fencer: weapon=2299, lame=2297, mass=16[0m
+[0;32mI (107674) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=7[0m
+[0;32mI (107774) FencingScoring: Red Fencer: weapon=4095, lame=9, mass=7[0m
+[0;32mI (107874) FencingScoring: Red Fencer: weapon=2297, lame=2299, mass=9[0m
+[0;32mI (107974) FencingScoring: Red Fencer: weapon=2315, lame=2281, mass=9[0m
+[0;32mI (108074) FencingScoring: Red Fencer: weapon=2299, lame=2295, mass=16[0m
+[0;32mI (108174) FencingScoring: Red Fencer: weapon=2299, lame=2298, mass=17[0m
+[0;32mI (108274) FencingScoring: Red Fencer: weapon=2298, lame=2298, mass=17[0m
+[0;32mI (108374) FencingScoring: Red Fencer: weapon=2297, lame=2298, mass=9[0m
+[0;32mI (108434) FencingScoring: hitOnTargetGRN: 0, hitOffTargetGRN: 0, hitMassGRN: 0, hitOffTargetRD: 0, hitOnTargetRD: 1, hitMassRD: 0, Locked Out: 1[0m
+[0;32mI (108474) FencingScoring: Red Fencer: weapon=4095, lame=26, mass=17[0m
+[0;32mI (108574) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (108674) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=16[0m
+[0;32mI (108774) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (108874) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (108974) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=17[0m
+[0;32mI (109074) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (109174) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (109274) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (109374) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (109474) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=43[0m
+[0;32mI (109574) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=39[0m
+[0;32mI (109674) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (109774) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (109874) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=24[0m
+[0;32mI (109974) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=22[0m
+[0;32mI (110074) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=7[0m
+[0;32mI (110184) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=20[0m
+[0;32mI (110274) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=22[0m
+[0;32mI (110374) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=18[0m
+[0;32mI (110474) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (110574) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (110674) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (110774) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=7[0m
+[0;32mI (110874) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (110984) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (111084) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=6[0m
+[0;32mI (111184) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (111284) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=7[0m
+[0;32mI (111384) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (111484) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (111584) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (111684) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (111784) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (111884) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (111984) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (112084) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (112184) FencingScoring: Red Fencer: weapon=4095, lame=4, mass=7[0m
+[0;32mI (112284) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (112384) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (112484) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=17[0m
+[0;32mI (112584) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (112684) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (112784) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (112884) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (112984) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (113084) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (113184) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (113284) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (113384) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (113484) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (113584) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=10[0m
+[0;32mI (113684) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=17[0m
+[0;32mI (113784) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (113884) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (113984) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (114084) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (114184) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=16[0m
+[0;32mI (114284) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (114384) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (114484) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (114584) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=6[0m
+[0;32mI (114684) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (114784) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=9[0m
+[0;32mI (114884) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (114994) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=7[0m
+[0;32mI (115094) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (115194) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (115294) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (115394) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (115494) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (115594) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (115694) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=9[0m
+[0;32mI (115794) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=10[0m
+[0;32mI (115894) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (115994) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (116094) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (116194) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (116294) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (116394) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (116494) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (116594) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (116694) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (116794) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (116894) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (116994) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (117094) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m
+[0;32mI (117194) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=16[0m
+[0;32mI (117294) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (117394) FencingScoring: Red Fencer: weapon=4095, lame=5, mass=8[0m
+[0;32mI (117494) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (117594) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (117694) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (117794) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (117894) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=8[0m
+[0;32mI (117994) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (118094) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (118194) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (118294) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (118394) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=10[0m
+[0;32mI (118494) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=9[0m
+[0;32mI (118594) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=8[0m
+[0;32mI (118694) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=10[0m
+[0;32mI (118794) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=16[0m
+[0;32mI (118894) FencingScoring: Red Fencer: weapon=4095, lame=7, mass=17[0m
+[0;32mI (119004) FencingScoring: Red Fencer: weapon=4095, lame=6, mass=9[0m
+[0;32mI (119104) FencingScoring: Red Fencer: weapon=4095, lame=8, mass=8[0m

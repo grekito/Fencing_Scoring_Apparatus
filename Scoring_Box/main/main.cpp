@@ -11,7 +11,6 @@ extern "C" {
 #include "esp_timer.h"
 #include "esp_idf_version.h"
 }
-
 #define TAG "FencingScoring"
 #define BUZZERTIME  1000
 #define LIGHTTIME   3000
@@ -28,6 +27,7 @@ extern "C" {
 #define BUZZER_CHANNEL LEDC_CHANNEL_0
 #define BUZZER_FREQ    2000
 #define BUZZER_RESOLUTION LEDC_TIMER_10_BIT
+#define MODE_BUTTON_PIN GPIO_NUM_14 // <-- Add this line
 
 // --- ADC THRESHOLDS ---
 const int EPEE_REST_THRESHOLD_ADC              = 4095;
@@ -55,7 +55,6 @@ typedef struct struct_message {
     int lameVoltage;
     int massVoltage;
 } struct_message;
-
 struct_message incomingReadings;
 
 // Variables
@@ -72,6 +71,11 @@ bool depressedRD = false, depressedGRN = false;
 bool hitOnTargetRD = false, hitOffTargetRD = false, massLedRD = false, hitMassRD = false;
 bool hitOnTargetGRN = false, hitOffTargetGRN = false, massLedGRN = false, hitMassGRN = false;
 bool hitRegistered = false;
+
+// Button debounce variables
+unsigned long lastButtonCheckTime = 0;
+bool lastButtonState = true; // Pull-up: true = not pressed
+const unsigned long debounceDelay = 50; // ms
 
 // Helper: Arduino-like millis() and micros()
 unsigned long millis() {
@@ -129,7 +133,6 @@ void OnDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *incomingDat
 
 // --- LOGIC FUNCTIONS ---
 void resetGameStates();
-
 void signalHits() {
     if (lockedOut) {
         digitalWrite(ON_TARGET_GRN,  hitOnTargetGRN ? 1 : 0);
@@ -144,7 +147,6 @@ void signalHits() {
         resetGameStates();
     }
 }
-
 void resetGameStates() {
     vTaskDelay(pdMS_TO_TICKS(BUZZERTIME));
     digitalWrite(BUZZER, 0);
@@ -170,7 +172,6 @@ void resetGameStates() {
     hitRegistered   = false;
     vTaskDelay(pdMS_TO_TICKS(100));
 }
-
 void epee() {
     long now = micros();
     if ((hitOnTargetGRN && (depressGRNTime + lockout[EPEE_MODE] < now)) ||
@@ -232,7 +233,6 @@ void epee() {
         }
     }
 }
-
 void foil() {
     long now = micros();
     if (((hitOnTargetGRN || hitOffTargetGRN) && (depressGRNTime + lockout[FOIL_MODE] < now)) ||
@@ -294,7 +294,6 @@ void foil() {
         }
     }
 }
-
 void sabre() {
     long now = micros();
     if (((hitOnTargetGRN || hitOffTargetGRN) && (depressGRNTime + lockout[SABRE_MODE] < now)) ||
@@ -335,11 +334,44 @@ void sabre() {
     }
 }
 
+// --- MODE BUTTON HANDLER ---
+void checkModeButton() {
+    unsigned long now = millis();
+    bool buttonState = gpio_get_level(MODE_BUTTON_PIN); // 0 = pressed, 1 = not pressed (pull-up)
+    if (buttonState == 0 && lastButtonState == 1 && (now - lastButtonCheckTime > debounceDelay)) {
+        // Button pressed
+        currentMode = (currentMode + 1) % 3;
+        ESP_LOGI(TAG, "Mode changed: %s", currentMode == EPEE_MODE ? "EPEE" : (currentMode == FOIL_MODE ? "FOIL" : "SABRE"));
+        lastButtonCheckTime = now;
+    }
+    lastButtonState = buttonState;
+}
+
+void checkDataTimeout() {
+    unsigned long now = millis();
+    const unsigned long timeout = 500; // ms
+    if (now - lastRedDataTime > timeout) {
+        rdWeaponVoltage = 0;
+        rdLameVoltage = 0;
+        rdMassVoltage = 0;
+    }
+    if (now - lastGreenDataTime > timeout) {
+        grnWeaponVoltage = 0;
+        grnLameVoltage = 0;
+        grnMassVoltage = 0;
+    }
+}
+
+// --- SETUP ---
 void fencing_setup() {
     pinMode(ON_TARGET_RD, GPIO_MODE_OUTPUT);
     pinMode(ON_TARGET_GRN, GPIO_MODE_OUTPUT);
     pinMode(OFF_TARGET_GRN, GPIO_MODE_OUTPUT);
     pinMode(OFF_TARGET_RD, GPIO_MODE_OUTPUT);
+
+    // Mode button setup
+    pinMode(MODE_BUTTON_PIN, GPIO_MODE_INPUT);
+    gpio_set_pull_mode(MODE_BUTTON_PIN, GPIO_PULLUP_ONLY);
 
     ledc_timer_config_t timer_conf = {};
     timer_conf.speed_mode = LEDC_LOW_SPEED_MODE;
@@ -368,17 +400,20 @@ void fencing_setup() {
 
     setBuzzerVolume(0);
     ESP_LOGI(TAG, "Fencing Scoring Apparatus setup complete.");
+    ESP_LOGI(TAG, "Mode button on GPIO_NUM_32. Press to cycle modes.");
 }
 
 // Main logic task (like Arduino loop)
 void fencing_main_task(void *pvParameter) {
     fencing_setup();
     while (1) {
+        checkModeButton(); // <-- Add this line
         switch (currentMode) {
             case EPEE_MODE: epee(); break;
             case FOIL_MODE: foil(); break;
             case SABRE_MODE: sabre(); break;
         }
+        checkDataTimeout();
         signalHits();
         vTaskDelay(pdMS_TO_TICKS(10));
     }
@@ -392,11 +427,9 @@ extern "C" void app_main(void) {
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
-
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     esp_netif_create_default_wifi_sta();
-
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));

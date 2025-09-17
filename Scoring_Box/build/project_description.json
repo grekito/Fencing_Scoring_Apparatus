@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "Scoring_Box",
-    "project_version":    "885a49b-dirty",
+    "project_version":    "fd654c8-dirty",
     "project_path":       "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box",
     "idf_path":           "/home/costa/esp/esp-idf",
     "build_dir":          "/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/build",

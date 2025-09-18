@@ -1,0 +1,16 @@
+Command: make -j 6 all
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void checkVolumeButton()':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:357:5: error: 'lastButtonChecktime' was not declared in this scope; did you mean 'lastButtonCheckTime'?
+  357 |     lastButtonChecktime = now;
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     lastButtonCheckTime
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void fencing_main_task(void*)':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:429:24: error: too few arguments to function 'void setBuzzerVolume(int)'
+  429 |         setBuzzerVolume();
+      |         ~~~~~~~~~~~~~~~^~
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:99:6: note: declared here
+   99 | void setBuzzerVolume(int current_volume) {
+      |      ^~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:79: esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7295: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

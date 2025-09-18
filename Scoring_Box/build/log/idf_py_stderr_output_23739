@@ -1,0 +1,17 @@
+Command: make -j 6 all
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void checkVolumeButton()':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:354:58: error: 'lastButtonCheckTime2' was not declared in this scope; did you mean 'lastButtonCheckTime'?
+  354 |   if (buttonState == 0 && lastButtonState == 1 && (now - lastButtonCheckTime2 > debounceDelay)) {
+      |                                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                                          lastButtonCheckTime
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:357:5: error: 'lastButtonChecktime2' was not declared in this scope; did you mean 'lastButtonCheckTime'?
+  357 |     lastButtonChecktime2 = now;
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     lastButtonCheckTime
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp: In function 'void fencing_main_task(void*)':
+/home/costa/Documents/Fencing_Scoring_Apparatus/Scoring_Box/main/main.cpp:430:26: warning: statement will never be executed [-Wswitch-unreachable]
+  430 |           setBuzzerVolume(current_volume);
+      |           ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:79: esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7295: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

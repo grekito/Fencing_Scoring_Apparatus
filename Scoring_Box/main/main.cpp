@@ -13,7 +13,7 @@ extern "C" {
 }
 #define TAG "FencingScoring"
 #define BUZZERTIME  1000
-#define LIGHTTIME   3000
+#define LIGHTTIME   2000
 #define BAUDRATE 115200
 #define ADC_MAX_VAL 4095
 #define ADC_REF_VOLTAGE 3.3
@@ -28,6 +28,7 @@ extern "C" {
 #define BUZZER_FREQ    2000
 #define BUZZER_RESOLUTION LEDC_TIMER_10_BIT
 #define MODE_BUTTON_PIN GPIO_NUM_14 // <-- Add this line
+#define VOLUME_BUTTON_PIN GPIO_NUM_5
 
 // --- ADC THRESHOLDS ---
 const int EPEE_REST_THRESHOLD_ADC              = 4095;
@@ -66,7 +67,7 @@ bool lockedOut = false, hitMass = false;
 unsigned long lastModeButtonPressTime = 0, lastVolumeButtonPressTime = 0;
 unsigned long lastRedDataTime = 0, lastGreenDataTime = 0;
 uint8_t currentMode = EPEE_MODE;
-int current_volume = 1;
+int current_volume = 3;
 bool depressedRD = false, depressedGRN = false;
 bool hitOnTargetRD = false, hitOffTargetRD = false, massLedRD = false, hitMassRD = false;
 bool hitOnTargetGRN = false, hitOffTargetGRN = false, massLedGRN = false, hitMassGRN = false;
@@ -76,6 +77,8 @@ bool hitRegistered = false;
 unsigned long lastButtonCheckTime = 0;
 bool lastButtonState = true; // Pull-up: true = not pressed
 const unsigned long debounceDelay = 50; // ms
+unsigned long lastButtonCheckTime2 = 0;
+bool lastButtonState2 = true; // Pull-up: true = not pressed
 
 // Helper: Arduino-like millis() and micros()
 unsigned long millis() {
@@ -94,7 +97,7 @@ void pinMode(gpio_num_t pin, gpio_mode_t mode) {
     gpio_set_direction(pin, mode);
 }
 
-// PWM helper
+// PWM helpe
 void setBuzzerVolume(int current_volume) {
     int duty_cycle = 0;
     switch (current_volume) {
@@ -132,6 +135,7 @@ void OnDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *incomingDat
 }
 
 // --- LOGIC FUNCTIONS ---
+void checkModeButton();
 void resetGameStates();
 void signalHits() {
     if (lockedOut) {
@@ -334,6 +338,27 @@ void sabre() {
     }
 }
 
+void updateWeaponModeLights(){
+  digitalWrite(ON_TARGET_RD, 0);
+  digitalWrite(ON_TARGET_RD, 0);
+
+  if (currentMode == EPEE_MODE){
+    digitalWrite(ON_TARGET_RD, 1);
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    digitalWrite(ON_TARGET_RD, 0);
+  } else if (currentMode == FOIL_MODE){
+    digitalWrite(ON_TARGET_GRN, 1);
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    digitalWrite(ON_TARGET_GRN, 0);
+  } else if (currentMode == SABRE_MODE){
+    digitalWrite(ON_TARGET_RD, 1);
+    digitalWrite(ON_TARGET_GRN, 1);
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    digitalWrite(ON_TARGET_RD, 0);
+    digitalWrite(ON_TARGET_GRN, 0); 
+  }
+}
+
 // --- MODE BUTTON HANDLER ---
 void checkModeButton() {
     unsigned long now = millis();
@@ -343,9 +368,24 @@ void checkModeButton() {
         currentMode = (currentMode + 1) % 3;
         ESP_LOGI(TAG, "Mode changed: %s", currentMode == EPEE_MODE ? "EPEE" : (currentMode == FOIL_MODE ? "FOIL" : "SABRE"));
         lastButtonCheckTime = now;
+        updateWeaponModeLights();
     }
     lastButtonState = buttonState;
 }
+
+void checkVolumeButton() {
+   unsigned long now = millis();
+   bool buttonState = gpio_get_level (VOLUME_BUTTON_PIN);
+   if (buttonState == 0 && lastButtonState2 == 1 && (now - lastButtonCheckTime2 > debounceDelay)) {
+     current_volume = (current_volume + 1) % 4;
+     ESP_LOGI(TAG, "Volume changed: %s", current_volume == 0 ? "Mute" : (current_volume == 1 ? "Low" : (current_volume == 2 ? "Medium" : "High")));
+     lastButtonCheckTime2 = now;
+     setBuzzerVolume(current_volume);
+     vTaskDelay(pdMS_TO_TICKS(1000));
+     setBuzzerVolume(0);
+   }
+   lastButtonState2 = buttonState;
+ }
 
 void checkDataTimeout() {
     unsigned long now = millis();
@@ -372,6 +412,9 @@ void fencing_setup() {
     // Mode button setup
     pinMode(MODE_BUTTON_PIN, GPIO_MODE_INPUT);
     gpio_set_pull_mode(MODE_BUTTON_PIN, GPIO_PULLUP_ONLY);
+
+    pinMode(VOLUME_BUTTON_PIN, GPIO_MODE_INPUT);
+    gpio_set_pull_mode(VOLUME_BUTTON_PIN, GPIO_PULLUP_ONLY);
 
     ledc_timer_config_t timer_conf = {};
     timer_conf.speed_mode = LEDC_LOW_SPEED_MODE;
@@ -413,6 +456,7 @@ void fencing_main_task(void *pvParameter) {
             case FOIL_MODE: foil(); break;
             case SABRE_MODE: sabre(); break;
         }
+        checkVolumeButton();
         checkDataTimeout();
         signalHits();
         vTaskDelay(pdMS_TO_TICKS(10));
